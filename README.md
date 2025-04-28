@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 🔐 Basit Şifre Yöneticisi
 
 HTML, CSS (Bootstrap) ve JavaScript (ES Modülleri) ile geliştirilmiş, web sitesi kimlik bilgilerini tarayıcının LocalStorage alanında AES şifrelemesi (CryptoJS kullanarak) ile saklayan basit bir web uygulamasıdır.
@@ -62,6 +61,3 @@ Password-Manager/
 ├── index.html
 └── README.md
 ```
-=======
-
->>>>>>> fbbe96e0028964bcbca9f6b83347ae6f70a96c2e
