@@ -27,21 +27,37 @@
         class="form-control mb-3"
         id="search"
         placeholder="🔎 Site adına göre ara..."
-        oninput="displayPasswords()"
       />
 
       <!-- Giriş Formu -->
-      <div class="card p-3 shadow-sm mb-4">
-        <div class="mb-3">
-          <label class="form-label">Site Adı</label>
-          <input type="text" id="site" class="form-control" required />
+      <form id="passwordForm" class="card p-3 shadow-sm mb-4">
+        <div class="mb-3 position-relative">
+          <label for="site" class="form-label">Site Adı</label>
+          <input
+            type="text"
+            id="site"
+            class="form-control"
+            required
+            autocomplete="off"
+          />
+          <div
+            id="siteSuggestions"
+            class="list-group position-absolute w-100 border rounded shadow-sm bg-white"
+            style="
+              z-index: 10;
+              top: 100%;
+              max-height: 200px;
+              overflow-y: auto;
+              display: none;
+            "
+          ></div>
         </div>
         <div class="mb-3">
-          <label class="form-label">Kullanıcı Adı</label>
+          <label for="username" class="form-label">Kullanıcı Adı</label>
           <input type="text" id="username" class="form-control" required />
         </div>
         <div class="mb-3">
-          <label class="form-label">Şifre</label>
+          <label for="password" class="form-label">Şifre</label>
           <div class="input-group">
             <input
               type="password"
@@ -52,23 +68,24 @@
             <button
               class="btn btn-outline-secondary"
               type="button"
-              onclick="togglePassword()"
+              id="togglePasswordBtn"
             >
               👁
             </button>
           </div>
         </div>
-        <button class="btn btn-primary w-100" onclick="savePassword()">
-          Kaydet
-        </button>
-      </div>
+        <!-- Buton Grubu -->
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-end">
+          <button type="submit" class="btn btn-primary">Kaydet</button>
+        </div>
+      </form>
 
       <!-- Kayıtlı Şifreler -->
       <h5>Kayıtlı Şifreler</h5>
       <ul id="passwordList" class="list-group mt-2"></ul>
     </div>
 
-    <!-- JavaScript Dosyaları (Modüler yapıya göre düzenlendi) -->
+    <!-- JavaScript Dosyaları -->
     <script type="module" src="js/app.js"></script>
   </body>
 </html>

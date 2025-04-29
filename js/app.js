@@ -1,17 +1,33 @@
 // js/app.js
-
-import { togglePassword, savePassword, displayPasswords } from "./ui.js";
-
-// Sayfa yüklendiğinde kayıtları göster
+import {
+  togglePassword,
+  savePassword,
+  displayPasswords,
+  handleSiteInput,
+} from "./ui.js";
 document.addEventListener("DOMContentLoaded", () => {
   displayPasswords();
 
-  // Olay dinleyicileri
-  document.getElementById("search").addEventListener("input", displayPasswords);
-  document
-    .getElementById("password")
-    .nextElementSibling.addEventListener("click", togglePassword);
-  document
-    .querySelector("button.btn-primary")
-    .addEventListener("click", savePassword);
+  const searchInput = document.getElementById("search");
+  if (searchInput) {
+    searchInput.addEventListener("input", displayPasswords);
+  }
+
+  const siteInput = document.getElementById("site");
+  if (siteInput) {
+    siteInput.addEventListener("input", handleSiteInput);
+  }
+
+  const toggleBtn = document.getElementById("togglePasswordBtn");
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", togglePassword);
+  }
+
+  const passwordForm = document.getElementById("passwordForm");
+  if (passwordForm) {
+    passwordForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      savePassword();
+    });
+  }
 });

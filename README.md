@@ -54,7 +54,9 @@ Password-Manager/
 │   └── style.css
 ├── js/
 │   ├── utils/
-│   │   └── crypto.js
+│   │   ├── commonSites.js
+│   │   ├── crypto.js
+│   │   └── clearForm.js
 │   ├── app.js
 │   ├── storage.js
 │   └── ui.js
